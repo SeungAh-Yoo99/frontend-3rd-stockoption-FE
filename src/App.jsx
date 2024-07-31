@@ -1,12 +1,22 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
+import { fetchStockRankingData } from "./api/api.js";
 
 function App() {
-  const [count, setCount] = useState(0);
+  fetchDataAsync();
 
-  return <>stockoption</>;
+  return (
+    <div>
+      <h1>Check the console for data output</h1>
+    </div>
+  );
 }
+
+const fetchDataAsync = async () => {
+  try {
+    const result = await fetchStockRankingData('0001', '0');
+    console.log(result); // 결과를 콘솔에 출력
+  } catch (error) {
+    console.error("Error fetching data:", error); // 오류를 콘솔에 출력
+  }
+};
 
 export default App;
