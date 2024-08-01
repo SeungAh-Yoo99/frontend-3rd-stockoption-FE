@@ -3,8 +3,6 @@ import Header from "./components/Header";
 import BlockLayout from "./layouts/BlockLayout";
 import DefaultLayout from "./layouts/DefaultLayout";
 import { HeaderContext } from "./contexts/HeaderContext";
-import { fetchStockRankingData } from "./api/api.js";
-import PaginationEx from "./components/PaginationEx.jsx";
 import StockForm from "./components/StockForm.jsx";
 import "@/assets/components/pagination.css";
 
