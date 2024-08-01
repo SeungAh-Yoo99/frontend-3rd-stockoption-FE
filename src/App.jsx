@@ -4,6 +4,8 @@ import BlockLayout from "./layouts/BlockLayout";
 import DefaultLayout from "./layouts/DefaultLayout";
 import { HeaderContext } from "./contexts/HeaderContext";
 import { fetchStockRankingData } from "./api/api.js";
+import PaginationEx from "./components/PaginationEx.jsx";
+import "@/assets/components/pagination.css";
 
 const headerButtons = [
   {
@@ -26,7 +28,7 @@ const headerButtons = [
 
 function App() {
   fetchDataAsync();
-  
+
   const [iscd, setIscd] = useState("0000");
 
   const changeIscd = (newIscd) => {
@@ -55,7 +57,7 @@ function App() {
 
 const fetchDataAsync = async () => {
   try {
-    const result = await fetchStockRankingData('0001', '0');
+    const result = await fetchStockRankingData("0001", "0");
     console.log(result); // 결과를 콘솔에 출력
   } catch (error) {
     console.error("Error fetching data:", error); // 오류를 콘솔에 출력

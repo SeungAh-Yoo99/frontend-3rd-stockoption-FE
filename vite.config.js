@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
-  base: "/frontend-3rd-stockoption/",
+  base: "/frontend-3rd-stockoption-FE/",
   resolve: {
     alias: [{ find: "@", replacement: "/src" }],
   },
