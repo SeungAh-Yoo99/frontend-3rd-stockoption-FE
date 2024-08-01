@@ -32,8 +32,8 @@ function StockForm({ iscd }) {
       }
     };
 
-    fetchDataAsync();
     setPage(1);
+    fetchDataAsync();
   }, [selectedCategory, iscd]);
 
   // 페이지네이션을 통해 보여줄 slice된 리스트
@@ -62,24 +62,24 @@ function StockForm({ iscd }) {
   return (
     <div className="w-full h-full flex flex-col justify-between items-center">
       {/* 필터 select box */}
-      <div className="w-full h-5%">
+      <div className="w-full h-5% mb-1">
         <StockFilter handleFilter={handleSelect}></StockFilter>
       </div>
 
       {/* 목록 */}
-      <div className="w-full h-87% flex-glow pl-5 flex flex-col justify-start">
+      <div className="w-full h-87% flex-glow flex flex-col justify-start">
         {/* 타이틀 */}
-        <div className="w-full h-10% grid grid-flow-col\row-span-${order.products.length} lg:grid-cols-5 grid-cols-5 gap-12 items-center mb-2">
-          <div>순위</div>
-          <div>종목명</div>
-          <div>현재가</div>
-          <div>전일대비</div>
-          <div>전일대비율</div>
+        <div className="w-full h-10% grid grid-flow-col\row-span-${order.products.length} lg:grid-cols-5 grid-cols-5 gap-12 items-center mb-2 text-gray-500">
+          <div className="flex justify-center">순위</div>
+          <div className="flex justify-center">종목명</div>
+          <div className="flex justify-center">현재가</div>
+          <div className="flex justify-center">전일대비</div>
+          <div className="flex justify-center">전일대비율</div>
         </div>
         {/* stock item 올 부분 */}
         {currentList.map((item) => (
-          <div className="w-full h-9%">
-            <StockItemForm item={item} key={item.data_rank} />
+          <div className="w-full h-9%" key={item.data_rank}>
+            <StockItemForm item={item} />
           </div>
         ))}
       </div>
