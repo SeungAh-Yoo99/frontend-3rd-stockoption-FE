@@ -5,6 +5,7 @@ import DefaultLayout from "./layouts/DefaultLayout";
 import { HeaderContext } from "./contexts/HeaderContext";
 import { fetchStockRankingData } from "./api/api.js";
 import PaginationEx from "./components/PaginationEx.jsx";
+import StockForm from "./components/StockForm.jsx";
 import "@/assets/components/pagination.css";
 
 const headerButtons = [
@@ -27,7 +28,7 @@ const headerButtons = [
 ];
 
 function App() {
-  fetchDataAsync();
+ 
 
   const [iscd, setIscd] = useState("0000");
 
@@ -49,6 +50,7 @@ function App() {
         {/* Body */}
         <BlockLayout height={"h-80%"}>
           {/* 여기에 Body 부분 컴포넌트 위치 */}
+          <StockForm></StockForm>
         </BlockLayout>
       </DefaultLayout>
     </>
