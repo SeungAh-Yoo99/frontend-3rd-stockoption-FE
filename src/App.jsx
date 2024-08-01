@@ -28,8 +28,6 @@ const headerButtons = [
 ];
 
 function App() {
- 
-
   const [iscd, setIscd] = useState("0000");
 
   const changeIscd = (newIscd) => {
@@ -50,20 +48,11 @@ function App() {
         {/* Body */}
         <BlockLayout height={"h-80%"}>
           {/* 여기에 Body 부분 컴포넌트 위치 */}
-          <StockForm></StockForm>
+          <StockForm iscd={iscd}></StockForm>
         </BlockLayout>
       </DefaultLayout>
     </>
   );
 }
-
-const fetchDataAsync = async () => {
-  try {
-    const result = await fetchStockRankingData("0001", "0");
-    console.log(result); // 결과를 콘솔에 출력
-  } catch (error) {
-    console.error("Error fetching data:", error); // 오류를 콘솔에 출력
-  }
-};
 
 export default App;
