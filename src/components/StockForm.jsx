@@ -33,6 +33,7 @@ function StockForm({ iscd }) {
     };
 
     fetchDataAsync();
+    setPage(1);
   }, [selectedCategory, iscd]);
 
   // 페이지네이션을 통해 보여줄 slice된 리스트
@@ -59,32 +60,16 @@ function StockForm({ iscd }) {
   }, [page, stockList]);
 
   return (
-    // <>
-    //   <StockFilter handleFilter={handleSelect}></StockFilter>
-    //   <div className="grid grid-flow-col  row-span-${order.products.length} lg:grid-cols-5 grid-cols-5 gap-12 items-center ">
-    //     <div>data순위</div>
-    //     <div>종목명</div>
-    //     <div>현재가</div>
-    //     <div>전일대비</div>
-    //     <div>전일대비율</div>
-    //   </div>
-    //   <div className="w-[100%] my-[1%] border-[1px] border-black/70"></div>
-    //   <div></div>
-
-    //   {items.map((item) => (
-    //     <StockItemForm item={item} key={item.data_rank} />
-    //   ))}
-    // </>
     <div className="w-full h-full flex flex-col justify-between items-center">
       {/* 필터 select box */}
-      <div className="w-full h-8%">
+      <div className="w-full h-5%">
         <StockFilter handleFilter={handleSelect}></StockFilter>
       </div>
 
       {/* 목록 */}
       <div className="w-full h-87% flex-glow pl-5 flex flex-col justify-start">
         {/* 타이틀 */}
-        <div className="w-full h-10% grid grid-flow-col  row-span-${order.products.length} lg:grid-cols-5 grid-cols-5 gap-12 items-center ">
+        <div className="w-full h-10% grid grid-flow-col\row-span-${order.products.length} lg:grid-cols-5 grid-cols-5 gap-12 items-center mb-2">
           <div>순위</div>
           <div>종목명</div>
           <div>현재가</div>
@@ -93,7 +78,9 @@ function StockForm({ iscd }) {
         </div>
         {/* stock item 올 부분 */}
         {currentList.map((item) => (
-          <StockItemForm item={item} key={item.data_rank} />
+          <div className="w-full h-9%">
+            <StockItemForm item={item} key={item.data_rank} />
+          </div>
         ))}
       </div>
       <Pagination
@@ -104,7 +91,6 @@ function StockForm({ iscd }) {
         prevPageText={"<"} // "이전"을 나타낼 텍스트
         nextPageText={">"} // "다음"을 나타낼 텍스트
         onChange={changePageHandler} // 페이지 변경을 핸들링하는 함수
-        className="flex"
       />
     </div>
   );

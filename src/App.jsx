@@ -46,7 +46,7 @@ function App() {
           </HeaderContext.Provider>
         </BlockLayout>
         {/* Body */}
-        <BlockLayout height={"h-80%"}>
+        <BlockLayout height={"h-85%"}>
           {/* 여기에 Body 부분 컴포넌트 위치 */}
           <StockForm iscd={iscd}></StockForm>
         </BlockLayout>

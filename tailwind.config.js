@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        bgMain: "#2482c5",
+        bgMain: "#BFD7FE",
         bgComponent: "#FFFFFF",
       },
       spacing: {
@@ -14,6 +14,7 @@ export default {
         "10%": "10%",
         "13%": "13%",
         "80%": "80%",
+        "85%": "85%",
         "87%": "87%",
         "90%": "90%",
       },
