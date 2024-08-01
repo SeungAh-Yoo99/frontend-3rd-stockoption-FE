@@ -15,7 +15,6 @@ function StockForm() {
   const handleSelect = (e) => {
     let a= e.target.value;
     setSelected(a);
-    console.log(a)
   };
 
 
@@ -26,7 +25,6 @@ function StockForm() {
       let result;
       result = await fetchStockRankingData('0001', selectedCategory === 'high' ? "0" : "1");
       setItems(result);
-      // console.log(result);
   
     } catch (error) {
       console.error("Error fetching data:", error); // 오류를 콘솔에 출력

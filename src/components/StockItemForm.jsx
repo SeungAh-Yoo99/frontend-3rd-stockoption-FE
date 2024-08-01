@@ -2,17 +2,11 @@ import React from 'react'
 
 function StockItemForm({item}) {
 
-  // const m = {
-  //   dataRank : item.data_rank
-  // }
-
-  
-  // const [plusOrMinus,setPlusOrMinus] = useState("2");
   let plusOrMinus = item.prdy_vrss_sign;
   if(plusOrMinus=="2")
     plusOrMinus="+";
   else
-    plusOrMinus= "-";
+    plusOrMinus= "";
 
   return (
     <>
