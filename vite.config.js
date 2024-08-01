@@ -6,6 +6,7 @@ export default defineConfig({
   base: "/frontend-3rd-stockoption/",
   resolve: {
     alias: [{ find: "@", replacement: "/src" }],
+  },
   server: {
     proxy: {
       "/api": {
