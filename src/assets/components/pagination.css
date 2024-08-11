@@ -1,0 +1,24 @@
+.pagination {
+  width: 50%;
+  height: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.5rem;
+
+  li {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    display: flex; /* flex 사용 */
+    justify-content: center; /* 수평 중앙 정렬 */
+    align-items: center; /* 수직 중앙 정렬 */
+
+    &:hover,
+    &:active,
+    &.active {
+      background-color: #60a5fa;
+      color: white;
+    }
+  }
+}
